@@ -40,7 +40,7 @@ export default function GroupInternForm(_props: { internshipType?: string } = {}
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<any>(null);
 
   // Update individual member details
   const updateMember = (index, field, value) => {

@@ -421,7 +421,7 @@ export default function EnquiryForm({
   const [formData, setFormData] = useState({ ...EMPTY_FORM });
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [submittedData, setSubmittedData] = useState(null);
+  const [submittedData, setSubmittedData] = useState<{ name: string; nexilaID?: string } | null>(null);
 
   const updateField = (name, value) => {
     setFormData((previous) => ({

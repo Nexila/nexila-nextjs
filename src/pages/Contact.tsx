@@ -110,7 +110,7 @@ const CONTACT_FAQ = [
 ];
 
 function FAQSection() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <div className="faq">

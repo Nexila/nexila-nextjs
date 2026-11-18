@@ -378,7 +378,7 @@ function FaqCols({ items }) {
   import { REVIEWS } from "../data/siteData";
 */
 
-const REVIEWS = [];
+const REVIEWS: { s: number; t: string; n: string }[] = [];
 
 function GReviews() {
   return (

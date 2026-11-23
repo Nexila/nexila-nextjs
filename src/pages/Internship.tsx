@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Header, Footer, Topbar } from "./Home";
-import its1 from "../assets/images/internship/its1.jpg";
-import its2 from "../assets/images/internship/its2.jpg";
-import its5 from "../assets/images/internship/its5.jpg";
+const its1 = "/images/internship/its1.jpg";
+const its2 = "/images/internship/its2.jpg";
+const its5 = "/images/internship/its5.jpg";
 
 /* ================= INTERNSHIP DATA ================= */
 
@@ -1117,7 +1117,47 @@ function InternshipPage() {
           </div>
         </div>
       </section>
+<section className="sec alt" id="apply">
+        <div className="wrap">
+          <div className="lead" id="contact">
+            <div>
+              <div className="tag" style={{ color: "#7FB0FF" }}>
+                Apply for internship
+              </div>
 
+              <h2
+                style={{
+                  margin: "8px 0 12px",
+                  fontSize: 34,
+                }}
+              >
+                Start your software internship
+              </h2>
+
+              <p>
+                Fill in the form and our team will contact you with the next
+                steps. You can also call us on +91 980 306 1234.
+              </p>
+
+              <ul className="ck2" style={{ color: "#C4D1EE" }}>
+                <li style={{ color: "#C4D1EE" }}>
+                  2 to 8 weeks, flexible batches
+                </li>
+
+                <li style={{ color: "#C4D1EE" }}>
+                  Live project with mentor support
+                </li>
+
+                <li style={{ color: "#C4D1EE" }}>
+                  Certificate and recommendation letter
+                </li>
+              </ul>
+            </div>
+
+            <InternForm />
+          </div>
+        </div>
+      </section>
       {/* ================= WHY NEXILA ================= */}
 
       <section className="sec alt">

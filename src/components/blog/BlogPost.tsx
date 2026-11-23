@@ -979,7 +979,7 @@ function routeFor(target) {
 
 function RichText({ text }) {
   const navigate = useNavigate();
-  const parts = [];
+  const parts: React.ReactNode[] = [];
   const regex = /\[\[(.+?)\|(.+?)\]\]/g;
   let last = 0;
   let match;
@@ -1239,7 +1239,15 @@ function DemoRequestForm({ post }) {
 function Comments({ slug }) {
   const key = `nx_comments_${slug}`;
   const api = typeof window !== "undefined" ? window.NX_COMMENTS_API || "" : "";
-  const [comments, setComments] = useState([]);
+  type Comment = {
+    id: string;
+    name: string;
+    text: string;
+    date: string;
+    status?: string;
+  };
+
+  const [comments, setComments] = useState<Comment[]>([]);
   const [form, setForm] = useState({ name: "", email: "", text: "", site: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);

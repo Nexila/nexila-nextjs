@@ -353,7 +353,9 @@ export default function Blog() {
               <div className="card">
                 <h3 style={{ marginBottom: 12 }}>Popular reads</h3>
 
-                {popularBlogs.map((blog, index) => (
+                {popularBlogs
+                  .filter((blog): blog is NonNullable<typeof blog> => Boolean(blog))
+                  .map((blog, index) => (
                   <Link
                     key={blog.slug}
                     className="pr"

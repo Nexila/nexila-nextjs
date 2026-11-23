@@ -43,7 +43,7 @@ const parseHash = () => {
   };
 };
 
-function go(e, r, sec = undefined, slug = undefined) {
+function go(e: any, r: string, sec?: string | null, slug?: string) {
   if (e && e.preventDefault) e.preventDefault();
 
   const path =
@@ -80,7 +80,7 @@ function go(e, r, sec = undefined, slug = undefined) {
   }
 }
 
-function openDemo(e, kind = undefined) {
+function openDemo(e: any, kind?: string) {
   if (e && e.preventDefault) e.preventDefault();
 
   window.dispatchEvent(
@@ -1234,7 +1234,7 @@ const MC = [
 ];
 
 function Match() {
-  const [sel, setSel] = useState([]);
+  const [sel, setSel] = useState<string[]>([]);
 
   const tog = (k) =>
     setSel((v) => (v.includes(k) ? v.filter((x) => x !== k) : [...v, k]));
@@ -2760,7 +2760,7 @@ function About() {
 
             <div className="abv">
               <img
-                src={aboutImages[aboutImageIndex]}
+                src={aboutImages[aboutImageIndex].src}
                 alt="Nexila Technologies training centre"
               />
             </div>

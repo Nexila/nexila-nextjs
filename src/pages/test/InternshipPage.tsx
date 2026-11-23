@@ -39,7 +39,7 @@ export function InternForm() {
   const [location, setLocation] = useState("");
 
   const [showSuccess, setShowSuccess] = useState(false);
-  const [submittedData, setSubmittedData] = useState(null);
+  const [submittedData, setSubmittedData] = useState<{ name: string; nexilaID?: string } | null>(null);
 
   const [paymentLoading, setPaymentLoading] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState("PENDING");
@@ -588,7 +588,7 @@ const API_BASE_URL = (
 
 
 let leadSaved = false;
-let applicationDetails = null;
+let applicationDetails: { name: string; nexilaID?: string } | null = null;
 
 setLoading(true);
 setPaymentLoading(false);
@@ -829,7 +829,9 @@ const options = {
         );
       }
 
-      const razorpay = new window.Razorpay(options);
+      const RazorpayConstructor = window.Razorpay;
+      if (!RazorpayConstructor) throw new Error('Razorpay SDK is not loaded.');
+      const razorpay = new RazorpayConstructor(options);
 
       razorpay.on("payment.failed", (failure) => {
         console.error("Razorpay payment failed:", failure?.error);
@@ -1287,3 +1289,5 @@ const options = {
     </form>
   );
 }
+
+export default InternForm;

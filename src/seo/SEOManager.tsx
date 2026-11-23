@@ -27,9 +27,9 @@ export default function SEOManager() {
 
   useEffect(() => {
     const path =
-      location.pathname === "/"
+      (location.pathname || "/") === "/"
         ? "/"
-        : location.pathname.replace(/\/+$/, "");
+        : (location.pathname || "/").replace(/\/+$/, "");
 
     const page = SEO_CONFIG[path];
 

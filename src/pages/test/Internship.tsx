@@ -365,9 +365,9 @@ function PhotoSlider({ items, ms = 10000 }) {
   );
 }
 
-function Head({ tag, title, sub }) {
+function Head({ tag, title, sub, className = '' }: { tag: string; title: string; sub?: string; className?: string }) {
   return (
-    <div>
+    <div className={className}>
       <div className="tag">{tag}</div>
 
       <h2 className="h2">{title}</h2>
@@ -405,7 +405,7 @@ function FaqCols({ items }) {
   import { REVIEWS } from "../data/siteData";
 */
 
-const REVIEWS = [];
+const REVIEWS: { s: number; t: string; n: string }[] = [];
 
 function GReviews() {
   return (
